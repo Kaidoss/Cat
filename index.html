@@ -38,16 +38,21 @@
         margin-top: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+    #status {
+        margin-top: 10px;
+        font-weight: bold;
+    }
 </style>
 </head>
 <body>
 <div id="container">
-    <h2>Sei curioso eh?! Clicca e scopri il risultato sul gatto di Schrödinger</h2>
-    <p>Il gatto è vivo o morto?</p>
-    <button onclick="observe()">Apri la scatola</button>
+    <h2>Schrödinger's Cat Experiment</h2>
+    <p>Is the cat alive or dead?</p>
+    <button onclick="observe()">Observe</button>
     <div id="result">
         <!-- Images will be added here -->
     </div>
+    <div id="status"></div>
 </div>
 
 <script>
@@ -55,18 +60,17 @@
         // Randomly determine if the cat is alive or dead
         const isAlive = Math.random() < 0.5;
 
-        // Display the result with images
-         const resultElement = document.getElementById("result");
+        // Display the result with images and status message
+        const resultElement = document.getElementById("result");
         resultElement.innerHTML = ""; // Clear previous content
-
 
         const image = document.createElement("img");
         image.setAttribute("src", isAlive ? "./cat_alive.jpg" : "./cat_dead.jpg");
         image.setAttribute("alt", isAlive ? "Alive Cat" : "Dead Cat");
         resultElement.appendChild(image);
 
-         const statusElement = document.getElementById("status");
-        statusElement.textContent = isAlive ? "Il gatto è vivo! :)" : "Il gatto è morto! :(";
+        const statusElement = document.getElementById("status");
+        statusElement.textContent = isAlive ? "The cat is alive!" : "The cat is dead!";
     }
 </script>
 </body>
