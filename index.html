@@ -42,6 +42,9 @@
         margin-top: 10px;
         font-weight: bold;
     }
+    #cat-box {
+        margin-top: 50px; /* Aggiunto spazio tra il pulsante e l'immagine */
+    }
 </style>
 </head>
 <body>
@@ -49,7 +52,9 @@
     <h2>Schrödinger's Cat Experiment</h2>
     <p>Is the cat alive or dead?</p>
     <button onclick="observe()">Observe</button>
-    <img src="cat_box.jpg" alt="Cat Box">
+    <div id="cat-box">
+        <img src="cat_box.jpg" alt="Cat Box">
+    </div>
     <div id="result">
         <!-- Images will be added here -->
     </div>
