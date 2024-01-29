@@ -43,19 +43,25 @@
         margin-top: 10px;
         font-weight: bold;
     }
+    #box-container {
+        position: relative;
+        margin-bottom: 20px;
+    }
     #box-image {
         position: absolute;
-        top: -150px; /* Posizione dell'immagine della scatola rispetto al contenitore */
+        top: -120px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
-        width: 200px; /* Larghezza dell'immagine della scatola */
+        width: 150px;
     }
 </style>
 </head>
 <body>
 <div id="container">
-    <img id="box-image" src="cat_box.jpg" alt="Cat Box">
+    <div id="box-container">
+        <img id="box-image" src="cat_box.jpg" alt="Cat Box">
+    </div>
     <h2>Schrödinger's Cat Experiment</h2>
     <p>Is the cat alive or dead?</p>
     <button onclick="observe()">Observe</button>
