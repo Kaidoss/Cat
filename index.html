@@ -56,8 +56,9 @@
         const isAlive = Math.random() < 0.5;
 
         // Display the result with images
-        const resultElement = document.getElementById("result");
+         const resultElement = document.getElementById("result");
         resultElement.innerHTML = ""; // Clear previous content
+
 
         const image = document.createElement("img");
         image.setAttribute("src", isAlive ? "./cat_alive.jpg" : "./cat_dead.jpg");
