@@ -13,7 +13,7 @@
     }
     #container {
         text-align: center;
-        margin-top: 50px;
+        margin-top: 150px; /* Aggiunto margine per spostare il contenuto verso il basso */
         position: relative;
     }
     h2 {
@@ -45,7 +45,7 @@
     }
     #box-image {
         position: absolute;
-        top: -100px;
+        top: -150px; /* Posizione dell'immagine della scatola rispetto al contenitore */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
@@ -54,8 +54,8 @@
 </head>
 <body>
 <div id="container">
-    <h2>Schrödinger's Cat Experiment</h2>
     <img id="box-image" src="cat_box.jpg" alt="Cat Box">
+    <h2>Schrödinger's Cat Experiment</h2>
     <p>Is the cat alive or dead?</p>
     <button onclick="observe()">Observe</button>
     <div id="result">
