@@ -1,1 +1,38 @@
-<h1>test n 1</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schrödinger's Cat Experiment</title>
+<style>
+    #container {
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+    <h2>Schrödinger's Cat Experiment</h2>
+    <p>Is the cat alive or dead?</p>
+    <button onclick="observe()">Observe</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    function observe() {
+        // Randomly determine if the cat is alive or dead
+        const isAlive = Math.random() < 0.5;
+
+        // Display the result to the user
+        const resultElement = document.getElementById("result");
+        if (isAlive) {
+            resultElement.textContent = "The cat is alive!";
+        } else {
+            resultElement.textContent = "The cat is dead!";
+        }
+    }
+</script>
+</body>
+</html>
+
