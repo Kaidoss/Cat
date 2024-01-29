@@ -63,6 +63,9 @@
         image.setAttribute("src", isAlive ? "./cat_alive.jpg" : "./cat_dead.jpg");
         image.setAttribute("alt", isAlive ? "Alive Cat" : "Dead Cat");
         resultElement.appendChild(image);
+
+         const statusElement = document.getElementById("status");
+        statusElement.textContent = isAlive ? "Il gatto è vivo! :)" : "Il gatto è morto! :(";
     }
 </script>
 </body>
