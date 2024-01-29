@@ -14,6 +14,7 @@
     #container {
         text-align: center;
         margin-top: 50px;
+        position: relative;
     }
     h2 {
         color: #333;
@@ -42,13 +43,21 @@
         margin-top: 10px;
         font-weight: bold;
     }
+    #box-image {
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
 </style>
 </head>
 <body>
 <div id="container">
-    <h2>Ahhhhh che collega curiosone! Apri la scatola e scopri il risultato sul gatto di Schrödinger</h2>
-    <p>E' vivo o morto???</p>
-    <button onclick="observe()">Apri la scatola</button>
+    <h2>Schrödinger's Cat Experiment</h2>
+    <img id="box-image" src="cat_box.jpg" alt="Cat Box">
+    <p>Is the cat alive or dead?</p>
+    <button onclick="observe()">Observe</button>
     <div id="result">
         <!-- Images will be added here -->
     </div>
