@@ -9,6 +9,9 @@
         text-align: center;
         margin-top: 50px;
     }
+    img {
+        max-width: 300px;
+    }
 </style>
 </head>
 <body>
@@ -16,7 +19,9 @@
     <h2>Schrödinger's Cat Experiment</h2>
     <p>Is the cat alive or dead?</p>
     <button onclick="observe()">Observe</button>
-    <p id="result"></p>
+    <div id="result">
+        <!-- Images will be added here -->
+    </div>
 </div>
 
 <script>
@@ -24,15 +29,15 @@
         // Randomly determine if the cat is alive or dead
         const isAlive = Math.random() < 0.5;
 
-        // Display the result to the user
+        // Display the result with images
         const resultElement = document.getElementById("result");
-        if (isAlive) {
-            resultElement.textContent = "The cat is alive!";
-        } else {
-            resultElement.textContent = "The cat is dead!";
-        }
+        resultElement.innerHTML = ""; // Clear previous content
+
+        const image = document.createElement("img");
+        image.setAttribute("src", isAlive ? "cat_alive.jpg" : "cat_dead.jpg");
+        image.setAttribute("alt", isAlive ? "Alive Cat" : "Dead Cat");
+        resultElement.appendChild(image);
     }
 </script>
 </body>
 </html>
-
