@@ -72,25 +72,27 @@
 
 <script>
     function observe() {
-        const button = document.querySelector("button");
-        button.disabled = true;
-        
-        // Randomly determine if the cat is alive or dead
-        const isAlive = Math.random() < 0.5;
+    // Disable the button
+    const button = document.querySelector("button");
+    button.disabled = true;
 
-        // Display the result with images and status message
-        const resultElement = document.getElementById("result");
-        resultElement.innerHTML = ""; // Clear previous content
+    // Randomly determine if the cat is alive or dead
+    const isAlive = Math.random() < 0.5;
 
-        const image = document.createElement("img");
-        image.setAttribute("src", isAlive ? "./cat_alive.gif" : "./cat_dead.gif");
-        image.setAttribute("alt", isAlive ? "Alive Cat" : "Dead Cat");
-        image.onload = function() {
-            const statusElement = document.getElementById("status");
-            statusElement.textContent = isAlive ? "Nessuno, il gatto è vivo e vegeto!" : "Sei stato proprio tu, la curiosità ha ucciso il gatto!";
-        };
-        resultElement.appendChild(image);
-    }
+    // Display the result with images and status message
+    const resultElement = document.getElementById("result");
+    resultElement.innerHTML = ""; // Clear previous content
+
+    const image = document.createElement("img");
+    image.setAttribute("src", isAlive ? "./cat_alive.gif" : "./cat_dead.jpg");
+    image.setAttribute("alt", isAlive ? "Alive Cat" : "Dead Cat");
+    image.onload = function() {
+        const statusElement = document.getElementById("status");
+        statusElement.textContent = isAlive ? "Nessuno, il gatto è vivo e vegeto!" : "Sei stato proprio tu, la curiosità ha ucciso il gatto!";
+    };
+    resultElement.appendChild(image);
+}
+
     
 </script>
 </body>
