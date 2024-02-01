@@ -63,6 +63,9 @@
 
 <script>
     function observe() {
+        const button = document.querySelector("button");
+        button.disabled = true;
+        
         // Randomly determine if the cat is alive or dead
         const isAlive = Math.random() < 0.5;
 
