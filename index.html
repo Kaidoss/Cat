@@ -84,14 +84,22 @@
     resultElement.innerHTML = ""; // Clear previous content
 
     const image = document.createElement("img");
-    image.setAttribute("src", isAlive ? "./cat_alive.gif" : "./cat_dead.gif");
-    image.setAttribute("alt", isAlive ? "Alive Cat" : "Dead Cat");
-    image.onload = function() {
+    if (isAlive) {
+        image.setAttribute("src", "./cat_alive.gif");
+        image.setAttribute("alt", "Alive Cat");
+    } else {
+        image.setAttribute("src", "./cat_dead.gif");
+        image.setAttribute("alt", "Dead Cat");
+    }
+    resultElement.appendChild(image);
+
+    // Delay showing the status message by 3 seconds
+    setTimeout(function() {
         const statusElement = document.getElementById("status");
         statusElement.textContent = isAlive ? "Nessuno, il gatto è vivo e vegeto!" : "Sei stato proprio tu, la curiosità ha ucciso il gatto!";
-    };
-    resultElement.appendChild(image);
+    }, 3000); // Delay in milliseconds (3 seconds)
 }
+
 
     
 </script>
