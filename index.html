@@ -85,11 +85,13 @@
         const image = document.createElement("img");
         image.setAttribute("src", isAlive ? "./cat_alive.gif" : "./cat_dead.gif");
         image.setAttribute("alt", isAlive ? "Alive Cat" : "Dead Cat");
+        image.onload = function() {
+            const statusElement = document.getElementById("status");
+            statusElement.textContent = isAlive ? "Nessuno, il gatto è vivo e vegeto!" : "Sei stato proprio tu, la curiosità ha ucciso il gatto!";
+        };
         resultElement.appendChild(image);
-
-        const statusElement = document.getElementById("status");
-        statusElement.textContent = isAlive ? "Nessuno, il gatto è vivo e vegeto!" : "Sei stato proprio tu, la curiosità ha ucciso il gatto!";
     }
+    
 </script>
 </body>
 </html>
